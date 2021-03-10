@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             toast(context),
             alerts(context),
-            loaders(context),
+            dialgos(context),
           ],
         ),
       ),
@@ -85,70 +85,6 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                 );
-              },
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget loaders(BuildContext context) {
-    void stopLoadingAfterSeconds() {
-      Future.delayed(Duration(seconds: 3)).then((value) {
-        QueenAlerts.load.stopLoading();
-      });
-    }
-
-    final size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        Text(
-          'Loaders',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OutlinedButton(
-              child: Text('loadIos'),
-              onPressed: () {
-                QueenAlerts.load.loadIos(context);
-                stopLoadingAfterSeconds();
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('loadAndroid'),
-              onPressed: () {
-                QueenAlerts.load.loadAndroid(context);
-                stopLoadingAfterSeconds();
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('loadAdaptive'),
-              onPressed: () {
-                QueenAlerts.load.loadAdaptive(context);
-                stopLoadingAfterSeconds();
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('loadWindows'),
-              onPressed: () {
-                QueenAlerts.load.loadWindows(context);
-                stopLoadingAfterSeconds();
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('text with icon'),
-              onPressed: () {
-                QueenAlerts.load
-                    .builder(context: context, builder: (_) => Container(child: Center(child: Text('plase wait rome was not built in a day'))));
-                stopLoadingAfterSeconds();
               },
             ),
           ],
@@ -238,6 +174,35 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget dialgos(BuildContext context) {
+    // final size = MediaQuery.of(context).size;
+    return Column(
+      children: [
+        Text(
+          'Dialgos',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // OutlinedButton(
+            //   child: Text('dnager'),
+            //   onPressed: () {
+            //     QueenAlerts.prompt.danger(
+            //       context,
+            //       title: 'title',
+            //       subtitle: 'subtitle',
+            //     );
+            //   },
+            // ),
+            // SizedBox(width: size.width * 0.01),
           ],
         ),
       ],
