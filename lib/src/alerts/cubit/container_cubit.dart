@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:queen_alerts/src/alerts/cubit/container_state.dart';
 import 'package:queen_alerts/src/alerts/widgets/alert_entity.dart';
