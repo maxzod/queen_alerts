@@ -9,5 +9,7 @@ dependencies:
     sdk: flutter
   queen_alerts:
     path: ../
+  url_strategy: ^0.2.0
+
 flutter:
   uses-material-design: true

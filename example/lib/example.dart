@@ -20,7 +20,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      // body: buildColumnWithExpandedChild(),
     );
   }
 
@@ -33,8 +32,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
           children: [
             OutlinedButton(
               child: Text('text'),
@@ -102,8 +100,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
           children: [
             OutlinedButton(
               child: Text('dnager'),
@@ -181,7 +178,6 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget dialgos(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
     return Column(
       children: [
         Text(
@@ -189,21 +185,8 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // OutlinedButton(
-            //   child: Text('dnager'),
-            //   onPressed: () {
-            //     QueenAlerts.prompt.danger(
-            //       context,
-            //       title: 'title',
-            //       subtitle: 'subtitle',
-            //     );
-            //   },
-            // ),
-            // SizedBox(width: size.width * 0.01),
-          ],
+        Wrap(
+          children: [Text('soon')],
         ),
       ],
     );

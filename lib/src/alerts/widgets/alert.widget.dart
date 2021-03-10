@@ -26,8 +26,7 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
   double opacity = 1;
   @override
   void initState() {
-    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1))
-        .then((value) {
+    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1)).then((value) {
       setState(() {
         opacity = 0;
       });
@@ -38,39 +37,39 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final largeScreen = width > 800;
     return AnimatedOpacity(
       duration: Duration(seconds: 1),
       opacity: opacity,
-      child: Card(
-        margin: EdgeInsets.symmetric(
-          horizontal: kIsWeb ? size.width * 0.01 : size.width * .03,
-          vertical: size.height * 0.01,
-        ),
-        color: widget.color,
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * .01,
-          ),
-          width: kIsWeb ? size.width * 0.25 : size.width,
-          height: size.height * .07,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              widget.icon,
-              SizedBox(width: size.width * 0.01),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  widget.title,
-                  if (widget.subtitle != null) widget.subtitle!,
-                ],
-              ),
-              Spacer(),
-              IconButton(
-                  icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
-            ],
+      child: Center(
+        child: Card(
+          margin: EdgeInsets.symmetric(horizontal: width * .01, vertical: size.height * 0.01),
+          color: widget.color,
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: size.width * .01,
+            ),
+            width: largeScreen ? width * .30 : width * .98,
+            height: size.height * .07,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                widget.icon,
+                SizedBox(width: size.width * 0.01),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    widget.title,
+                    if (widget.subtitle != null) widget.subtitle!,
+                  ],
+                ),
+                Spacer(),
+                IconButton(icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
+              ],
+            ),
           ),
         ),
       ),

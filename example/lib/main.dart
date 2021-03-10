@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:queen_alerts/queen_alerts.dart';
 import 'package:queen_alerts_example/example.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
+
   runApp(MaterialApp(
     title: 'Flutter Demo',
     debugShowCheckedModeBanner: false,
-    // home: TestScreen(),
     home: HomeScreen(),
-    builder: (_, child) => QueenAlertsContiner(
-      // direction: TextDirection.ltr,
-      child: child!,
-    ),
+    builder: (_, child) => QueenAlertsContiner(child: child!),
   ));
 }
