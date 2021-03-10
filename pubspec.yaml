@@ -1,0 +1,17 @@
+name: queen_alerts
+description: need to alert user with simple alert ? toast ? dialog ? loading indicator ? queen got your back
+repository: https://github.com/maxzod/queen_alerts
+homepage: https://github.com/maxzod/queen_alerts
+issue_tracker: https://github.com/maxzod/queen_alerts/issues
+
+version: 0.0.0+1-beta
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^6.1.3
+dev_dependencies:
+  pedantic: ^1.11.0
+flutter:
+  uses-material-design: true
