@@ -22,13 +22,19 @@ class DangerAlertWidget extends StatelessWidget {
       icon: Icon(Icons.dangerous, color: Colors.white),
       title: Text(
         title,
-        style: Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white),
+        style: Theme.of(context)
+            .textTheme
+            .headline6!
+            .copyWith(color: Colors.white),
       ),
       subtitle: subtitle == null
           ? null
           : Text(
               subtitle!,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.white),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: Colors.white),
             ),
     );
   }

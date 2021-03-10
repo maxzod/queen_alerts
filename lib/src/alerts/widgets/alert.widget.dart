@@ -26,7 +26,8 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
   double opacity = 1;
   @override
   void initState() {
-    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1)).then((value) {
+    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1))
+        .then((value) {
       setState(() {
         opacity = 0;
       });
@@ -44,7 +45,8 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
       opacity: opacity,
       child: Center(
         child: Card(
-          margin: EdgeInsets.symmetric(horizontal: width * .01, vertical: size.height * 0.01),
+          margin: EdgeInsets.symmetric(
+              horizontal: width * .01, vertical: size.height * 0.01),
           color: widget.color,
           child: Container(
             padding: EdgeInsets.symmetric(
@@ -67,7 +69,8 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
                   ],
                 ),
                 Spacer(),
-                IconButton(icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
+                IconButton(
+                    icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
               ],
             ),
           ),
