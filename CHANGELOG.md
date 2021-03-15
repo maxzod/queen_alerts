@@ -1,3 +1,7 @@
+## [0.0.4-beta] - 3/10/2021
+
+- support position alerts using `Alignment` but will be place at center with small screens
+
 ## [0.0.3-beta] - 3/10/2021
 
 - updated the docs
@@ -8,6 +12,6 @@
 - add web demo
 - remove loaders
 
-## [0.0.0+1-bata] - 3/10/2021
+## [0.0.0+1-beta] - 3/10/2021
 
 - initial code

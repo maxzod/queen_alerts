@@ -21,4 +21,4 @@ with thw QueenAlert class you get access to
   - withIcon() => show toast with Text and Icon widget
   - builder() => build your entire toast widget
 
-## see example code for more info
+## see example tab for more info

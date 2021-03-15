@@ -43,36 +43,34 @@ class _QueenAlertWidgetState extends State<QueenAlertWidget> {
     return AnimatedOpacity(
       duration: Duration(seconds: 1),
       opacity: opacity,
-      child: Center(
-        child: Card(
-          margin: EdgeInsets.symmetric(
-              horizontal: width * .01, vertical: size.height * 0.01),
-          color: widget.color,
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: size.width * .01,
-            ),
-            width: largeScreen ? width * .30 : width * .98,
-            height: size.height * .07,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                widget.icon,
-                SizedBox(width: size.width * 0.01),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    widget.title,
-                    if (widget.subtitle != null) widget.subtitle!,
-                  ],
-                ),
-                Spacer(),
-                IconButton(
-                    icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
-              ],
-            ),
+      child: Card(
+        margin: EdgeInsets.symmetric(
+            horizontal: width * .01, vertical: size.height * 0.01),
+        color: widget.color,
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * .01,
+          ),
+          width: largeScreen ? width * .30 : width * .98,
+          height: size.height * .07,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              widget.icon,
+              SizedBox(width: size.width * 0.01),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  widget.title,
+                  if (widget.subtitle != null) widget.subtitle!,
+                ],
+              ),
+              Spacer(),
+              IconButton(
+                  icon: Icon(Icons.close), onPressed: widget.onCloseClicked)
+            ],
           ),
         ),
       ),

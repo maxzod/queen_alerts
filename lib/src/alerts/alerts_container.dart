@@ -5,18 +5,18 @@ import 'package:queen_alerts/src/alerts/cubit/container_cubit.dart';
 
 class QueenAlertsContiner extends StatelessWidget {
   final Widget child;
-  final TextDirection direction;
-  const QueenAlertsContiner(
-      {required this.child, this.direction = TextDirection.ltr});
+  final Alignment alignment;
+  const QueenAlertsContiner({
+    required this.child,
+    this.alignment = Alignment.bottomCenter,
+  });
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => ContinerCubit(),
-      child: Directionality(
-        textDirection: direction,
-        child: Stack(
-          children: [child, QueenAlertArea()],
-        ),
+      child: Stack(
+        alignment: alignment,
+        children: [child, QueenAlertArea()],
       ),
     );
   }
