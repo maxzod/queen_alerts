@@ -6,7 +6,7 @@ import 'package:queen_alerts/src/alerts/cubit/container_state.dart';
 class QueenAlertArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ContinerCubit, ContainerState>(
+    return BlocBuilder<ContainerCubit, ContainerState>(
       builder: (ctx, state) {
         if (state is AlertsChanged) {
           return Column(

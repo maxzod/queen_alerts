@@ -8,15 +8,15 @@ import 'package:queen_alerts/src/toast/widget/with_icon.dart';
 /// which gravity to place the toast in
 enum Gravity { top, bottom, center }
 
-/// this class is resboinable for
-/// disblaying (inserting Widgets in the overlay)
+/// this class is responsible for
+/// displaying (inserting Widgets in the overlay)
 /// then remove them after while (provided duration)
-/// * what will happend if i inserted tow toasts directly after each other ?
-/// * the manager will remove the old one even if the durtion did not finish yet
+/// * what will happened if i inserted tow toasts directly after each other ?
+/// * the manager will remove the old one even if the duration did not finish yet
 /// ? you can user builder method to display your own custom style toast which is a => Widget
 /// ? or you can user pre-built toasts
 class ToastManager {
-  /// singleton pattren
+  /// singleton pattern
   ToastManager._();
   static ToastManager? _instance;
   static ToastManager get instance => _instance ?? ToastManager._();
@@ -25,9 +25,9 @@ class ToastManager {
   final _pending = <ToastEntity>[];
 
   /// if true there is another toast on the the screen
-  var _isVisable = false;
+  var _isVisible = false;
 
-  /// the manager main method wich will insert in remove toasts
+  /// the manager main method which will insert in remove toasts
   void _buildAndInsertEntry({
     required BuildContext context,
     required WidgetBuilder builder,
@@ -42,12 +42,12 @@ class ToastManager {
       ),
     );
 
-    if (!_isVisable) _displayNext();
+    if (!_isVisible) _displayNext();
   }
 
   void _displayNext() {
-    /// true so if any one calls to show another toast it will not trigger this functio
-    _isVisable = true;
+    /// true so if any one calls to show another toast it will not trigger this function
+    _isVisible = true;
 
     /// current `ToastEntity` to display
     final _entity = _pending.first;
@@ -55,7 +55,7 @@ class ToastManager {
     /// get the overlay and insert entry on it
     Navigator.of(_entity.context).overlay!.insert(_entity.entry);
 
-    /// await untill the toast time finish then remove it from the overlay
+    /// await until the toast time finish then remove it from the overlay
     /// then call the function to show another one and go on .....
     Future.delayed(_entity.duration).then((value) {
       /// remove the current entry from the overlay
@@ -67,7 +67,7 @@ class ToastManager {
       /// if the _pending list is empty means there is no other toasts to show so stop calling this function
       /// just set to false so any other toast will be aded can trigger this function
       if (_pending.isEmpty) {
-        _isVisable = false;
+        _isVisible = false;
       } else {
         _displayNext();
       }
@@ -77,7 +77,7 @@ class ToastManager {
   /// build your own toast
   /// you need to wrap your Widget inside `Positioned` Widget
   /// and set the height and width
-  /// alos set the top,bottom,right,left attribues to place the toast where ever you want
+  /// also set the top,bottom,right,left attributes to place the toast where ever you want
   void builder({
     required BuildContext context,
     required WidgetBuilder builder,

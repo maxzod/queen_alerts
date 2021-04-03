@@ -6,8 +6,8 @@ import 'package:queen_alerts/src/alerts/cubit/container_state.dart';
 import 'package:queen_alerts/src/alerts/widgets/alert_entity.dart';
 export 'package:queen_alerts/src/alerts/cubit/container_state.dart';
 
-class ContinerCubit extends Cubit<ContainerState> {
-  ContinerCubit() : super(const ContainerInintalState());
+class ContainerCubit extends Cubit<ContainerState> {
+  ContainerCubit() : super(const ContainerInitialState());
   final _items = <AlertEntity>[];
   Timer? _timer;
 
@@ -53,6 +53,5 @@ class ContinerCubit extends Cubit<ContainerState> {
     _timer!.cancel();
   }
 
-  void emitChanges() =>
-      emit(AlertsChanged(_items.map<Widget>((e) => e.child).toList()));
+  void emitChanges() => emit(AlertsChanged(_items.map<Widget>((e) => e.child).toList()));
 }

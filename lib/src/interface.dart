@@ -2,7 +2,7 @@ import 'package:queen_alerts/src/alerts/manager.dart';
 import 'package:queen_alerts/src/dialogs/manager.dart';
 import 'package:queen_alerts/src/toast/manager.dart';
 
-/// publlic api for developers to ease the liberay usage with one interface
+/// public api for developers to ease the library usage with one interface
 abstract class QueenAlerts {
   /// show alerts
   static final prompt = PromptsManager.instance;

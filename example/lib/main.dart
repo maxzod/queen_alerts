@@ -10,7 +10,7 @@ void main() {
     title: 'Flutter Demo',
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
-    builder: (_, child) => QueenAlertsContiner(
+    builder: (_, child) => QueenAlertsContainer(
       alignment: Alignment.centerLeft,
       child: child!,
     ),

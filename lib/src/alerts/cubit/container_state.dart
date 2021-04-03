@@ -4,8 +4,8 @@ abstract class ContainerState {
   const ContainerState();
 }
 
-class ContainerInintalState extends ContainerState {
-  const ContainerInintalState();
+class ContainerInitialState extends ContainerState {
+  const ContainerInitialState();
 }
 
 class AlertsChanged extends ContainerState {

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:queen_alerts/src/toast/manager.dart';
 
 /// get size to leave from top
-double? toastTopPostion(Size size, Gravity position) {
+double? toastTopPosition(Size size, Gravity position) {
   switch (position) {
     case Gravity.top:
       return size.height * 0.1;
@@ -14,7 +14,7 @@ double? toastTopPostion(Size size, Gravity position) {
 }
 
 /// get size to   from  bottom
-double? toastBottomPostion(Size size, Gravity position) {
+double? toastBottomPosition(Size size, Gravity position) {
   switch (position) {
     case Gravity.top:
       return null;
@@ -24,16 +24,3 @@ double? toastBottomPostion(Size size, Gravity position) {
       return null;
   }
 }
-
-// int? bottomValue(BuildContext context, ToastPosition position) {
-//   switch (position) {
-//     case ToastPosition.top:
-//       return null;
-
-//     case ToastPosition.bottom:
-//       return 0;
-
-//     case ToastPosition.center:
-//       return (MediaQuery.of(context).size.height * .5).toInt();
-//   }
-// }

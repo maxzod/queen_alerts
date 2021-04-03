@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Data class wich will contain all neceasry information about toast intery
+/// Data class which will contain all necessary information about toast entire
 class ToastEntity {
   final OverlayEntry entry;
   final BuildContext context;

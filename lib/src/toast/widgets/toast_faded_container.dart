@@ -23,10 +23,9 @@ class _FadedToastContainerState extends State<FadedToastContainer> {
   double opacity = 1;
   @override
   void initState() {
-    /// set callback to trigger fade ainmation
+    /// set callback to trigger fade animation
     /// before the duration is up by 1 second
-    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1))
-        .then((value) => setState(() => opacity = 0));
+    Future.delayed(Duration(seconds: widget.duration.inSeconds - 1)).then((value) => setState(() => opacity = 0));
     super.initState();
   }
 
@@ -34,8 +33,8 @@ class _FadedToastContainerState extends State<FadedToastContainer> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      top: toastTopPostion(size, widget.gravity),
-      bottom: toastBottomPostion(size, widget.gravity),
+      top: toastTopPosition(size, widget.gravity),
+      bottom: toastBottomPosition(size, widget.gravity),
       child: Material(
         child: AnimatedOpacity(
           opacity: opacity,
