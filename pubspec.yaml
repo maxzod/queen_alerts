@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.0.0
+  flutter_hooks: ^0.16.0
+  lottie: ^1.0.1
+  responsive_builder: ^0.4.1
 
 dev_dependencies:
   pedantic: ^1.11.0

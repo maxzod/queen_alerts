@@ -1,6 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:queen_alerts/queen_alerts.dart';
+import 'package:queen_alerts_example/parts/alerts.dart';
+import 'package:queen_alerts_example/parts/dialogs.dart';
+import 'package:queen_alerts_example/parts/toast.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -14,181 +15,12 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            toast(context),
-            alerts(context),
-            dialgos(context),
+            ToastsContainer(),
+            AlertsContainer(),
+            DialogsContainer(),
           ],
         ),
       ),
-    );
-  }
-
-  Widget toast(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        Text(
-          'Toast',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        Wrap(
-          children: [
-            OutlinedButton(
-              child: Text('text'),
-              onPressed: () {
-                QueenAlerts.toast.text(
-                  context: context,
-                  text: Text(
-                    'toast with text : you can add any text Widget you want ! \n'
-                    'also you can set the background color and the gravity [top,center,bottom]',
-                    textAlign: TextAlign.center,
-                  ),
-                  backgroundColor: Colors.blue,
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('text with icon'),
-              onPressed: () {
-                QueenAlerts.toast.withIcon(
-                  context: context,
-                  text: Text(
-                    'if you like it then like it on pub.dev :D',
-                    textAlign: TextAlign.center,
-                  ),
-                  icon: Icon(Icons.star_outline),
-                  backgroundColor: Colors.blue,
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('builder'),
-              onPressed: () {
-                QueenAlerts.toast.builder(
-                  context: context,
-                  builder: (context) {
-                    return Positioned(
-                      top: 50,
-                      height: 50,
-                      width: 50,
-                      left: 100,
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        color: Colors.yellow,
-                        child: CircularProgressIndicator(),
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget alerts(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        Text(
-          'Alerts',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        Wrap(
-          children: [
-            OutlinedButton(
-              child: Text('dnager'),
-              onPressed: () {
-                QueenAlerts.prompt.danger(
-                  context,
-                  title: 'title',
-                  subtitle: 'subtitle',
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('warning'),
-              onPressed: () {
-                QueenAlerts.prompt.warning(
-                  context,
-                  title: 'title',
-                  subtitle: 'subtitle',
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('info'),
-              onPressed: () {
-                QueenAlerts.prompt.info(
-                  context,
-                  title: 'title',
-                  subtitle: 'subtitle',
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('custom'),
-              onPressed: () {
-                QueenAlerts.prompt.custom(
-                  context,
-                  title: Text('title'),
-                  subtitle: Text('subtitle'),
-                  backGroundColor: Colors.blue,
-                );
-              },
-            ),
-            SizedBox(width: size.width * 0.01),
-            OutlinedButton(
-              child: Text('builder'),
-              onPressed: () {
-                QueenAlerts.prompt.builder(
-                  context,
-                  builder: (context) {
-                    return Material(
-                        child: Card(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: kIsWeb ? size.width * 0.01 : size.width * .03,
-                        vertical: size.height * 0.01,
-                      ),
-                      color: Colors.lightBlue,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: size.width * .01),
-                        width: kIsWeb ? size.width * 0.25 : size.width,
-                        height: size.height * .07,
-                        child: Center(child: Text('alert builder')),
-                      ),
-                    ));
-                  },
-                );
-              },
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget dialgos(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Dialgos',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        Wrap(
-          children: [Text('soon')],
-        ),
-      ],
     );
   }
 }
